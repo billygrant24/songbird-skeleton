@@ -1,0 +1,35 @@
+#
+# Lorem ipsum.
+#
+
+display:
+
+    #
+    # The name of the theme you want to use.
+    #
+
+    theme: 'default'
+
+    #
+    # The default number of results to show when using query().
+    #
+
+    perPage: 10
+
+    #
+    # The date format to use when converting timestamps.
+    #
+
+    dateFormat: 'jS M Y'
+
+    #
+    # Sets the word limit for excerpts.
+    #
+
+    excerptLength: 50
+
+    #
+    # This is the defaut sort method when one is not set using query().
+    #
+
+    sorting: 'id desc'

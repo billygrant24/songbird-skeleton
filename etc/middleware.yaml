@@ -1,0 +1,9 @@
+#
+# Add middleware here to boost the functionality of your site.
+#
+
+middleware:
+
+    - 'Songbird\Package\Plates\PlatesServiceProvider'
+
+    - 'Songbird\Package\CommonMark\MarkdownServiceProvider'

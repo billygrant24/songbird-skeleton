@@ -1,0 +1,21 @@
+{
+    "name": "williamgb/songbird-skeleton",
+    "description": "A skeleton project for Songbird, a simple site generator for PHP",
+    "license": "MIT",
+    "require": {
+        "williamgb/songbird": "dev-master",
+        "williamgb/songbird-commonmark": "dev-master",
+        "williamgb/songbird-plates": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "William Grant-Buckley",
+            "email": "ahoy@williambuckley.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "lib"
+        }
+    }
+}

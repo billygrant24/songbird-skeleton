@@ -1,0 +1,26 @@
+app:
+
+    #
+    # Enable debugging for developer friendly excption handling.
+    #
+
+    debug: true
+
+    #
+    # Set the HTTP request handler.
+    # See default implemention for details on how to create a custom handler.
+    #
+
+    handler: 'Songbird\Routing\Controller'
+
+    #
+    # These are some essential application paths.
+    #
+
+    paths:
+
+        resources: '../resources'
+
+        log: '../var/log'
+
+        cache: '../var/cache'
