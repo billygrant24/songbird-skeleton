@@ -1,17 +1,16 @@
 <?php
 
 use Songbird\AppFactory;
-use Songbird\Config;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 $loader = require __DIR__ . '/../vendor/autoload.php';
 
-$app = AppFactory::createApplication(new Config(getcwd() . '/../etc'));
+$app = AppFactory::createApplication(__DIR__ . '/../etc');
 
-if ($app['Config']->get('app.debug')) {
+if ($app->get('Config')['app.debug']) {
     $app->startDebugging();
 }
 
-$response = $app->run(Request::createFromGlobals(), new Response());
+$response = $app->run(Request::createFromGlobals());
+
 $response->send();
