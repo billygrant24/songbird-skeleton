@@ -1,49 +1,52 @@
-<?php $this->layout('theme::layouts/master') ?>
-
-<?php $this->start('title'); echo $meta['title']; $this->stop(); ?>
-
-<?php $this->start('body') ?>
-    <header class="intro-header" style="background-image: url('<?= $themeDir ?>/assets/img/robots.png')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1><?= $meta['title'] ?></h1>
-                        <hr class="small">
-                        <span class="subheading"><?= !isset($meta['summary']) ? '' : $meta['summary'] ?></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <?php $posts = $this->query(['type' => 'post', 'orderBy' => 'published DESC', 'limit' => 2]) ?>
-                <?php foreach ($posts as $post): ?>
-                    <div class="post-preview">
-                        <a href="/<?= $post->getId() ?>">
-                            <h2 class="post-title"><?= $post->title ?></h2>
-                            <h3 class="post-subtitle"><?= !isset($post->summary) ? '' : $post->summary ?></h3>
-                        </a>
-                        <p class="post-meta">Posted by <a href="#"><?= $post->author ?></a> on September 24, 2014</p>
-                    </div>
-                    <hr>
-                <?php endforeach; ?>
-                <?php $pager = $this->paginator($posts) ?>
-                <ul class="pager">
-                    <?php if ($pager->hasPrevious()): ?>
-                        <li class="previous">
-                            <a href="<?= $baseUrl ?>?page=<?= $pager->getPreviousPage() ?>">&larr; Newer Posts</a>
-                        </li>
-                    <?php endif; ?>
-                    <?php if ($pager->hasNext()): ?>
-                        <li class="next">
-                            <a href="<?= $baseUrl ?>?page=<?= $pager->getNextPage() ?>">Older Posts &rarr;</a>
-                        </li>
-                    <?php endif; ?>
-                </ul>
-            </div>
-        </div>
-    </div>
-<?php $this->stop() ?>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><?= $this->escape($meta['title']) ?></title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            background: #f6f6f6;
+            display: table;
+            font-family: 'Lato', sans-serif;
+            height: 100%;
+            margin: 0;
+            pading: 0;
+            text-align: center;
+            width: 100%;
+        }
+        main {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        article {
+            border: 1px solid #e6e6e6;
+            border-left-width: 0;
+            border-right-width: 0;
+            display: inline-block;
+            padding: 20px;
+        }
+        h1 {
+            color: #d6d6d6;
+            font-size: 48px;
+            font-weight: 100;
+            line-height: 1.4em;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        p {
+            color: #d6d6d6;
+            font-size: 22px;
+            font-weight: 100;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article>
+            <h1><?= $this->escape($meta['title']) ?></h1>
+            <?= $content ?>
+        </article>
+    </main>
+</body>
+</html>

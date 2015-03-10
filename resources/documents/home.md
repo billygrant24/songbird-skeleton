@@ -1,8 +1,7 @@
 ---
-title: 'Hello'
-summary: 'Welcome to your site!'
+title: 'Hello!'
 _template: 'home'
-_type: 'page'
+_type: 'homepage'
 ---
 
-...
+Congratulations, it looks like Songbird is up and running.
