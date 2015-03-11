@@ -12,7 +12,7 @@ return [
          * Set your template file extension.
          */
 
-        'extension' => 'plates.php',
+        'extension' => 'php',
 
         /*
          * Informs Plates of our template root.
