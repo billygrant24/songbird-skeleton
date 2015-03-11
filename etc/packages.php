@@ -3,10 +3,10 @@
 return [
 
     /*
-     * Add middleware here to boost the functionality of your site.
+     * Add packages here to boost the functionality of your site.
      */
 
-    'middleware' => [
+    'packages' => [
 
         /*
          * This provides our templating engine. If you remove this, you must implement another engine following the
