@@ -33,7 +33,7 @@ return [
          * See default implementation for details on how to create a custom handler.
          */
 
-        'handler' => 'Songbird\Routing\Controller',
+        'handler' => 'Songbird\Controller',
 
         /*
          * These are some essential application paths.
