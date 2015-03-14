@@ -7,7 +7,7 @@ $loader = require __DIR__ . '/../vendor/autoload.php';
 
 $app = AppFactory::createApplication(__DIR__ . '/../etc');
 
-if ($app->get('Config')['app.debug']) {
+if ($app->config('app.debug')) {
     $app->startDebugging();
 }
 
